@@ -1,0 +1,73 @@
+@use "./mixins" as *;
+@import "./variables";
+
+h1 {
+    font-size: $font-size-xl;
+    font-family: 'Kumbh Sans';
+    font-weight: $font-weight-regular;
+
+    @include media-query("tablet") {
+        font-size: $font-size-xl-tablet;
+    }
+
+    @include media-query("mobile") {
+        font-size: $font-size-xl-mobile;
+    }
+}
+
+h2 {
+    font-size: $font-size-l;
+    font-family: 'Kumbh Sans';
+    font-weight: $font-weight-medium;
+
+    @include media-query("tablet") {
+        font-size: $font-size-l-tablet;
+    }
+
+    @include media-query("mobile") {
+        font-size: $font-size-l-mobile;
+    }
+}
+
+h3 {
+    font-size: $font-size-m;
+    font-family: 'Kumbh Sans';
+    font-weight: $font-weight-bold;
+
+    @include media-query("tablet") {
+        font-size: $font-size-m-tablet;
+    }
+
+    @include media-query("mobile") {
+        font-size: $font-size-m-mobile;
+    }
+}
+
+p {
+    font-size: $font-size-s;
+    font-family: 'Inter';
+    font-weight: $font-weight-semibold;
+    
+
+    @include media-query("tablet") {
+        font-size: $font-size-s-tablet;
+    }
+
+    @include media-query("mobile") {
+        font-size: $font-size-s-mobile;
+    }
+}
+
+span {
+    font-size: $font-size-xs;
+    font-family: 'Inter';
+    font-weight: $font-weight-regular;
+
+    @include media-query("tablet") {
+        font-size: $font-size-xs-tablet;
+    }
+
+    @include media-query("mobile") {
+        font-size: $font-size-xs-mobile;
+    }
+}
