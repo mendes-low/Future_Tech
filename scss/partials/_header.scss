@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px $section-row-padding;
+    background-color: $color-dark-08;
+
+    @include tablet {
+        padding: 20px $section-row-padding-tablet;
+    }
+
+    @include mobile {
+        padding: 20px $section-row-padding-mobile;
+    }
+
+    .header-logo {
+        width: 170px;
+        height: 50px;
+
+        @include tablet {
+            width: 140px;
+            height: 40px;
+        }
+
+        @include mobile {
+            width: 110px;
+            height: 30px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .nav {
+        @include mobile {
+            display: none;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            @include tablet {
+                gap: 10px;
+            }
+
+            li {
+                @include reset-list;
+            }
+        }
+    }
+
+    .nav-list-item {
+        @include reset-link;
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: $font-size-xs;
+        color: $color-grey-50;
+
+        @include hover {
+            color: $color-abs-white;
+        }
+
+        @include tablet {
+            font-size: $font-size-xs-tablet;
+        }
+
+        @include mobile {
+            font-size: $font-size-m-mobile;
+        }
+
+        &.active {
+            font-weight: 500;
+            color: $color-abs-white;
+            padding: 10px 10px;
+            border-radius: $border-radius-primary;
+            border: 1px solid $color-dark-20;
+            background: $color-dark-08;
+
+            @include tablet {
+                padding: 10px 15px;
+                border-radius: $border-radius-secondary;
+            }
+
+            @include mobile {
+                padding: 10px 5px;
+                background-color: $color-abs-white;
+                border: 1px solid $color-dark-20;
+                border-left: none;
+                border-right: none;
+                z-index: 15000;
+            }
+        }
+    }
+
+    .registration-buttons {
+        display: flex;
+        gap: 10px;
+
+        @include mobile {
+            display: none;
+        }
+
+        button {
+            @include reset-button;
+
+            a {
+                @include reset-link;
+                background-color: $color-yellow-55;
+                padding: $button-padding;
+                border-radius: 10px;
+                color: $color-dark-08;
+                font-family: "Inter";
+                font-weight: 500;
+                font-size: $font-size-xs;
+
+                @include hover {
+                    color: $color-abs-white;
+                }
+
+                @include tablet {
+                    padding: $button-padding-tablet;
+                    font-size: $font-size-xs-tablet;
+                }
+            }
+        }
+    }
+
+    .burger-menu {
+        display: none;
+
+        @include mobile {
+            display: inherit;
+
+            .off-screen-menu {
+                @include mobile {
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    transition: 0.6s linear;
+                    z-index: 1000;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 50px;
+                    width: 100%;
+                    height: 100vh;
+                    max-width: 450px;
+                    padding: 17px 20px;
+                    background-color: $color-dark-10;
+                    text-align: center;
+                    font-size: $font-size-m-mobile;
+
+                    .burger-menu-logo {
+                        width: 120px;
+                        height: 60px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        text-align: left;
+                        gap: 10px;
+
+                        li {
+                            @include reset-list;
+                        }
+                    }
+
+                    .burger-menu-buttons {
+                        display: flex;
+                        justify-content: start;
+                        gap: 40px;
+
+                        button {
+                            @include reset-button;
+
+                            a {
+                                @include reset-link;
+                                font-family: "Inter";
+                                font-weight: 400;
+                                font-size: $font-size-m-mobile;
+                                color: $color-abs-white;
+                                padding: $button-padding-mobile;
+                                border-radius: $border-radius-primary;
+                                background-color: $color-yellow-55;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        right: 0;
+                    }
+                }
+            }
+
+            .burger-menu-lines {
+                @include mobile {
+                    position: relative;
+                    right: 0;
+                    height: 50px;
+                    width: 40px;
+                    z-index: 2000;
+
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: 0.5s ease;
+                        background-color: $color-abs-white;
+                        border-radius: 25px;
+                        height: 5px;
+                        width: 100%;
+
+                        &:nth-child(1) {
+                            top: 25%;
+                        }
+
+                        &:nth-child(3) {
+                            top: 75%;
+                        }
+                    }
+
+                    &.active {
+                        span {
+                            background-color: $color-abs-white;
+
+                            &:nth-child(1) {
+                                top: 50%;
+                                transform: translate(-50%, -50%) rotate(45deg);
+                            }
+
+                            &:nth-child(2) {
+                                opacity: 0;
+                            }
+
+                            &:nth-child(3) {
+                                width: 100%;
+                                top: 50%;
+                                transform: translate(-50%, -50%) rotate(-45deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

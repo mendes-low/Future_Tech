@@ -30,30 +30,51 @@ $color-grey-95: #f1f1f3;
 $color-grey-97: #f7f7f8;
 $color-grey-99: #fcfcfd;
 
-
 // ===== FONTS SIZES =====
 // ----- DESKTOP FONT SIZES -----
-$font-size-xl: 3rem;    // H1
-$font-size-l: 2.5rem;   // H2
-$font-size-m: 2rem;     // H3
-$font-size-s: 1.5rem;   // P
-$font-size-xs: 1rem;    // SPAN, BUTTON
+$font-size-xl: 48px; 
+$font-size-l: 40px;
+$font-size-m: 32px; 
+$font-size-s: 24px;
+$font-size-xs: 16px; 
 // ----- TABLET FONT SIZES -----
-$font-size-xl-tablet: 2.5rem;   // H1
-$font-size-l-tablet: 2rem;      // H2
-$font-size-m-tablet: 1.75rem;   // H3
-$font-size-s-tablet: 1.25rem;   // P
-$font-size-xs-tablet: 1rem;     // SPAN, BUTTON
+$font-size-xl-tablet: 40px; 
+$font-size-l-tablet: 32px;
+$font-size-m-tablet: 28px; 
+$font-size-s-tablet: 20px;
+$font-size-xs-tablet: 15px; 
 // ----- MOBILE FONT SIZES -----
-$font-size-xl-mobile: 2rem;   // H1
-$font-size-l-mobile: 1.75rem; // H2
-$font-size-m-mobile: 1.5rem;  // H3
-$font-size-s-mobile: 1.25rem; // P
-$font-size-xs-mobile: 1rem;   // SPAN, BUTTON
-
+$font-size-xl-mobile: 32px; 
+$font-size-l-mobile: 28px;
+$font-size-m-mobile: 24px; 
+$font-size-s-mobile: 20px;
+$font-size-xs-mobile: 16px; 
 
 // ===== FONT WEIGHTS =====
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+
+// ===== SECTIONS PADDING =====
+// ----- DESKTOP SECTIONS PADDING -----
+$section-row-padding: 50px;
+$section-column-padding: 120px;
+// ----- TABLET SECTIONS PADDING -----
+$section-row-padding-tablet: 20px;
+$section-column-padding-tablet: 80px;
+// ----- MOBILE SECTIONS PADDING -----
+$section-row-padding-mobile: 16px;
+$section-column-padding-mobile: 40px;
+
+// ===== BUTTON PADDING =====
+// ----- DESKTOP BUTTON PADDING -----
+$button-padding: 14px 20px;
+// ----- TABLET BUTTON PADDING -----
+$button-padding-tablet: 10px 14px;
+// ----- MOBILE BUTTON PADDING -----
+$button-padding-mobile: 16px 13px;
+
+// ===== BORDER RADIUS =====
+$border-radius-primary: 10px;
+$border-radius-secondary: 8px;

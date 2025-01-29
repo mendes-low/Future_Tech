@@ -1,4 +1,4 @@
-$mobile-max: 768px;
+$mobile-max: 767px;
 $tablet-max: 1024px;
 $desktop-min: 1025px;
 
@@ -20,9 +20,8 @@ $desktop-min: 1025px;
     }
 }
 
-
 @mixin hover {
-    @media (hover: hover){
+    @media (hover: hover) {
         &:hover {
             @content;
         }
@@ -35,6 +34,20 @@ $desktop-min: 1025px;
     }
 }
 
+@mixin reset-link {
+    color: inherit;
+    &,
+    &:hover {
+        text-decoration: none;
+    }
+}
 
+@mixin reset-list {
+    list-style-type: none;
+}
 
-
+@mixin reset-button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
