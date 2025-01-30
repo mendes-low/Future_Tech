@@ -1,0 +1,97 @@
+@import '../partials/variables';
+
+.accordion {
+    font-family: inherit;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $section-row-padding $section-column-padding;
+
+    &-item {
+        border: 1px solid $color-dark-15;
+        border-radius: ($border-radius-primary + 2px);
+        background: $color-dark-10;
+        transition: all 3s ease;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-header {
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $color-dark-10;
+        border-radius: $border-radius-primary + 2px;
+        font-weight: $font-weight-medium;
+        color: $color-abs-white;
+        font-size: $font-size-s;
+
+        &::after {
+            content: "+";
+            font-size: $font-size-l;
+            color: $color-yellow-55;
+            transition: transform 3s ease;
+        }
+
+        &.active {
+            &::after {
+                content: "-";
+                color: $color-abs-white;
+            }
+        }
+    }
+
+    &-content {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        color: $color-grey-50;
+        font-size: $font-size-xs;
+        line-height: 1.6;
+
+        &.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+    }
+}
+
+// ===== RESPONSIVE ADJUSTMENTS =====
+@media (max-width: 1024px) {
+    .accordion {
+        padding: $section-row-padding-tablet $section-column-padding-tablet;
+
+        &-header {
+            font-size: $font-size-s-tablet;
+            padding: $button-padding-tablet;
+        }
+
+        &-content {
+            font-size: $font-size-xs-tablet;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .accordion {
+        padding: $section-row-padding-mobile $section-column-padding-mobile;
+
+        &-header {
+            font-size: $font-size-s-mobile;
+            padding: $button-padding-mobile;
+
+            &::after {
+                font-size: $font-size-m-mobile;
+            }
+        }
+
+        &-content {
+            font-size: $font-size-xs-mobile;
+        }
+    }
+}

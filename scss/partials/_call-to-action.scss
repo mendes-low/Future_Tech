@@ -1,0 +1,257 @@
+@use "./mixins" as *;
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    background-color: $color-dark-10;
+    border: 1px solid $color-dark-15;
+    padding: 100px $section-row-padding;
+
+    @include tablet {
+        padding: 60px $section-row-padding-tablet;
+    }
+
+    @include mobile {
+        padding: 40px $section-row-padding-mobile;
+        gap: 220px;
+    }
+
+    .call-to-action-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+        height: 200px;
+
+        @include tablet {
+            height: 150px;
+            gap: 40px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        .call-to-action-top-logo {
+            width: 180px;
+            height: auto;
+
+            @include tablet {
+                width: 140px;
+            }
+
+            @include mobile {
+                display: none;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .call-to-action-top-title {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            height: 100%;
+
+            @include mobile {
+                gap: 20px;
+            }
+
+            .call-to-action-top-title-first {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                font-family: "Inter";
+                font-weight: $font-weight-medium;
+
+                @include mobile {
+                    display: none;
+                }
+
+                span {
+                    padding: 6px 10px;
+                    border-radius: $border-radius-secondary - 4px;
+                    color: $color-abs-white;
+                    background-color: $color-dark-20;
+                    font-size: $font-size-xs;
+
+                    @include tablet {
+                        padding: 4px 8px;
+                    }
+                }
+
+                h1 {
+                    font-family: "Kumbh Sans";
+                    font-size: $font-size-m;
+                    color: $color-abs-white;
+
+                    @include tablet {
+                        font-size: $font-size-m-tablet;
+                    }
+                }
+            }
+
+            .call-to-action-top-title-second {
+                font-size: $font-size-xs + 2px;
+                color: $color-grey-50;
+
+                @include tablet {
+                    font-size: $font-size-xs-tablet;
+                }
+
+                @include mobile {
+                    display: none;
+                }
+            }
+
+            .call-to-action-top-title-first-mobile {
+                display: none;
+
+                @include tablet {
+                    display: none;
+                }
+
+                @include mobile {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    font-family: "Inter";
+
+                    a {
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            object-fit: contain;
+                        }
+                    }
+
+                    span {
+                        padding: 4px 8px;
+                        border-radius: $border-radius-secondary;
+                        color: $color-abs-white;
+                        background-color: $color-dark-20;
+                        font-size: $font-size-xs;
+                        font-weight: $font-weight-medium;
+                    }
+                }
+            }
+
+            .call-to-action-top-title-second-mobile {
+                display: none;
+
+                @include tablet {
+                    display: none;
+                }
+
+                @include mobile {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                    font-size: $font-size-xs;
+                    font-weight: $font-weight-medium;
+
+                    h1 {
+                        font-family: "Kumbh Sans";
+                        font-size: $font-size-m;
+                        font-weight: $font-weight-medium;
+                        color: $color-abs-white;
+                    }
+
+                    p {
+                        font-family: "Inter";
+                        font-size: $font-size-xs;
+                        color: $color-grey-50;
+                    }
+                }
+            }
+        }
+    }
+
+    .call-to-action-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        background-color: $color-dark-08;
+        border-radius: $border-radius-primary + 2px;
+        border: 1px solid $color-dark-15;
+        padding: 20px;
+        font-family: "Inter";
+
+        @include tablet {
+            gap: 10px;
+            padding: 10px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        .call-to-action-bottom-card {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 45px;
+            background-color: $color-dark-10;
+            border-radius: $border-radius-primary + 2px;
+            border: 1px solid $color-dark-15;
+
+            @include tablet {
+                gap: 10px;
+                padding: 25px;
+                border-radius: $border-radius-secondary;
+            }
+
+            .call-to-action-bottom-card-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h3 {
+                    font-size: $font-size-xs + 3px;
+                    color: $color-abs-white;
+                    font-weight: $font-weight-semibold;
+
+                    @include tablet {
+                        font-size: $font-size-xs-tablet;
+                    }
+                }
+
+                a {
+                    width: 50px;
+                    height: 50px;
+
+                    @include tablet {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .call-to-action-bottom-card-bottom {
+                p {
+                    color: $color-grey-60;
+                    font-size: $font-size-xs;
+                    font-weight: $font-weight-regular;
+
+                    @include tablet {
+                        font-size: $font-size-xs-tablet - 2px;
+                    }
+                }
+            }
+        }
+    }
+}
