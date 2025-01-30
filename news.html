@@ -8,42 +8,195 @@
         <link rel="stylesheet" href="./css/styles.css" />
     </head>
     <body>
-        <header class="header">
-            <div class="header-logo">
+         <header class="header">
+            <a href="./index.html" class="header-logo">
                 <img
                     src="./assets/images/logo_desktop.svg"
                     alt="FutureTech Logo"
                 />
-            </div>
+            </a>
             <nav class="nav">
                 <ul class="nav-list">
-                   <li>
-                        <a class="nav-list-item home" href="./index.html">Home</a>
+                    <li>
+                        <a class="nav-list-item home" href="./index.html"
+                            >Home</a
+                        >
                     </li>
                     <li>
-                        <a class="nav-list-item news" href="./news.html">News</a>
+                        <a class="nav-list-item news" href="./news.html"
+                            >News</a
+                        >
                     </li>
                     <li>
-                        <a class="nav-list-item podcasts" href="./podcasts.html">Podcasts</a>
+                        <a class="nav-list-item podcasts" href="./podcasts.html"
+                            >Podcasts</a
+                        >
                     </li>
                     <li>
-                        <a class="nav-list-item resources" href="./resources.html">Resources</a>
+                        <a
+                            class="nav-list-item resources"
+                            href="./resources.html"
+                            >Resources</a
+                        >
                     </li>
                     <li>
-                        <a class="nav-list-item contact-us" href="./contact-us.html">Contact Us</a>
+                        <a
+                            class="nav-list-item contact-us"
+                            href="./contact-us.html"
+                            >Contact Us</a
+                        >
                     </li>
                 </ul>
             </nav>
             <div class="registration-buttons">
                 <button>
-                    <a href="#" class="registration-button">Sign Up</a>
+                    <a href="./sign-up.html" class="sign-up-button">Sign Up</a>
                 </button>
                 <button>
-                    <a href="#" class="login-button">Sign in</a>
+                    <a href="/sign-in.html" class="sign-in-button">Sign in</a>
                 </button>
+            </div>
+
+            <div class="burger-menu">
+                <div class="burger-menu-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="off-screen-menu">
+                    <div class="burger-menu-logo">
+                        <img
+                            src="./assets/images/logo_desktop.svg"
+                            alt="FutureTech Logo"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <ul>
+                        <li>
+                            <a class="nav-list-item home" href="./index.html"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a class="nav-list-item news" href="./news.html"
+                                >News</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="nav-list-item podcasts"
+                                href="./podcasts.html"
+                                >Podcasts</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="nav-list-item resources"
+                                href="./resources.html"
+                                >Resources</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                class="nav-list-item contact-us"
+                                href="./contact-us.html"
+                                >Contack Us</a
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="burger-menu-buttons">
+                        <button>
+                            <a href="./sign-up.html" class="sign-up-button"
+                                >Sign Up</a
+                            >
+                        </button>
+                        <button>
+                            <a href="/sign-in.html" class="sign-in-button"
+                                >Sign in</a
+                            >
+                        </button>
+                    </div>
+                </div>
             </div>
         </header>
         <h1>Hews</h1>
+
+         <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-top-section">
+                    <h3>Home</h3>
+                    <ul>
+                        <li>Features</li>
+                        <li>Blogs</li>
+                        <li>Testimonials</li>
+                        <li>Newsletter</li>
+                    </ul>
+                </div>
+                <div class="footer-top-section">
+                    <h3>News</h3>
+                    <ul>
+                        <li>Trending Stories</li>
+                        <li>Featured Videos</li>
+                        <li>Technology</li>
+                        <li>Health</li>
+                    </ul>
+                </div>
+                <div class="footer-top-section">
+                    <h3>Blogs</h3>
+                    <ul>
+                        <li>Quantum Computing</li>
+                        <li>AI Ethics</li>
+                        <li>Space Exploration</li>
+                        <li>Biotechnology</li>
+                    </ul>
+                </div>
+                <div class="footer-top-section">
+                    <h3>Podcasts</h3>
+                    <ul>
+                        <li>AI Revolution</li>
+                        <li>TechTalk AI</li>
+                        <li>AI Conversations</li>
+                        <li>AI Revolution</li>
+                    </ul>
+                </div>
+                <div class="footer-top-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li>Whitepapers</li>
+                        <li>Ebooks</li>
+                        <li>Reports</li>
+                        <li>Research Papers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-privacy-terms">
+                    <a href="#">Terms and Conditions</a>
+                    <span class="privacy-terms-separator"></span>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="social-media-icons">
+                    <a href="#"
+                        ><img
+                            src="./assets/images/icons/twitter-icon.svg"
+                            alt="Twitter"
+                    /></a>
+                    <a href="#"
+                        ><img
+                            src="./assets/images/icons/medium-icon.svg"
+                            alt="Medium"
+                    /></a>
+                    <a href="#"
+                        ><img
+                            src="./assets/images/icons/linkedin-icon.svg"
+                            alt="Linkedin"
+                    /></a>
+                </div>
+                <span class="company-rights">&copy; 2025 FutureTech. All rights reserved.</span>
+            </div>
+        </footer>
         <script src="./scripts/main.js"></script>
     </body>
 </html>

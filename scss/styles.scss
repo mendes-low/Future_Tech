@@ -1,6 +1,18 @@
 @import './partials/typography';
+// ===== PAGES =====
+@import './pages/contact-us';
+@import './pages/index';
+@import './pages/news';
+@import './pages/podcasts';
+@import './pages/resources';
+@import './pages/sign-up';
+@import './pages/sing-in';
+
+// ===== PARTIALS =====
 @import "./partials/variables";
 @import "./partials/mixins";
 @import "./partials/fonts"; 
 @import "./partials/header";
 @import "./partials/footer";
+
+

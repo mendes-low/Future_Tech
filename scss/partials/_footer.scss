@@ -1,0 +1,171 @@
+.footer {
+    background-color: $color-dark-08;
+    padding: 20px $section-row-padding;
+
+    @include tablet {
+        padding: 20px $section-row-padding-tablet;
+    }
+
+    @include mobile {
+        padding: 20px $section-row-padding-mobile;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 0;
+        width: 100%;
+        border-bottom: 1px solid $color-dark-15;
+
+        @include tablet {
+            padding: 50px 0;
+        }
+
+        @include mobile {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 30px 0;
+        }
+
+        .footer-top-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @include tablet {
+                gap: 15px;
+            }
+
+            @include mobile {
+                gap: 10px;
+            }
+
+            h3 {
+                color: $color-abs-white;
+                font-family: "Inter";
+                font-size: $font-size-xs;
+                font-weight: 500;
+
+                @include tablet {
+                    font-size: $font-size-xs-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-s-mobile;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                @include mobile {
+                    gap: 10px;
+                }
+
+                li {
+                    @include reset-list;
+                    font-family: "Inter";
+                    font-size: $font-size-xs;
+                    font-weight: 400;
+                    color: $color-dark-40;
+
+                    @include tablet {
+                        font-size: $font-size-xs-tablet;
+                    }
+
+                    @include mobile {
+                        font-size: $font-size-xs-mobile;
+                    }
+
+                    @include hover {
+                        cursor: pointer;
+                        color: $color-abs-white;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 0;
+
+        @include tablet {
+            padding: 30px 0;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .footer-privacy-terms {
+            display: flex;
+            gap: 10px;
+
+            @include tablet {
+                gap: 5px;
+            }
+
+            .privacy-terms-separator {
+                background-color: $color-dark-15;
+                height: 20px;
+                width: 1.5px;
+            }
+
+            a {
+                @include reset-link;
+                color: $color-dark-40;
+                font-family: "Inter";
+                font-size: $font-size-xs;
+                font-weight: 400;
+
+                @include tablet {
+                    font-size: $font-size-xs-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-xs-mobile;
+                }
+
+                @include hover {
+                    color: $color-abs-white;
+                }
+            }
+        }
+
+        .social-media-icons {
+            display: flex;
+            gap: 20px;
+
+            @include tablet {
+                gap: 10px;
+            }
+
+            @include mobile {
+                gap: 25px;
+            }
+        }
+
+        .company-rights {
+            color: $color-dark-40;
+            font-family: "Inter";
+            font-size: $font-size-xs;
+            font-weight: 400;
+
+            @include tablet {
+                font-size: $font-size-xs-tablet;
+            }
+
+            @include mobile {
+                font-size: $font-size-xs-mobile;
+            }
+        }
+    }
+}
