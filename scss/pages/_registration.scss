@@ -1,0 +1,108 @@
+@import '../partials/variables';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-dark-08;
+    width: 100%;
+    height: 100vh;
+    padding: 80px 20px;
+
+    .logo {
+        img {
+            width: 250px;
+            height: auto;
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        width: 350px;
+
+        h1 {
+            font-family: 'Kumbh Sans';
+            font-size: $font-size-xl;
+            font-weight: $font-weight-medium;
+            color: $color-abs-white;
+        }
+
+        .terms {
+            font-family: 'Inter';
+            font-weight: $font-weight-bold;
+            font-size: $font-size-xs;
+            color: $color-grey-60;
+            max-width: 300px;
+
+            .terms-link {
+                text-decoration: underline;
+                color: $color-abs-white;
+            }
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+
+            label {
+                font-family: 'Inter';
+                font-weight: $font-weight-bold;
+                font-size: $font-size-xs;
+                color: $color-abs-white;
+            }
+
+            input {
+                width: 100%;
+                height: 45px;
+                padding: 10px;
+                border: 1px solid $color-grey-70;
+                border-radius: $border-radius-secondary;
+                font-size: $font-size-xs;
+                outline: none;
+
+                &:focus {
+                    border-color: $color-dark-20;
+                }
+            }
+
+            .error-message {
+                font-size: $font-size-xs;
+                margin-top: 5px;
+            }
+        }
+
+        button {
+            width: 100%;
+            height: 45px;
+            background: $color-dark-20;
+            color: $color-abs-white;
+            font-size: $font-size-s;
+            border: none;
+            border-radius: $border-radius-primary;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &:hover {
+                color: $color-abs-black;
+                background: $color-yellow-60;
+            }
+        }
+
+        .form-bottom {
+            font-family: 'Inter';
+            font-weight: $font-weight-medium;
+            font-size: $font-size-xs;
+            color: $color-abs-white;
+
+            .login-link {
+                color: $color-yellow-60;
+                text-decoration: underline;
+            }
+        }
+    }
+}
