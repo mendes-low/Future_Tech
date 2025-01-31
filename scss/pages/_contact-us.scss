@@ -1,97 +1,574 @@
-@import '../partials/variables';
+@use "../partials/mixins" as *;
+@import "../partials/variables";
 
-.accordion {
-    font-family: inherit;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: $section-row-padding $section-column-padding;
+// ===== INFORMATION ABOUT US =====
+.info-about-us {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $color-dark-08;
+    font-family: "Inter";
 
-    &-item {
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
         border: 1px solid $color-dark-15;
-        border-radius: ($border-radius-primary + 2px);
-        background: $color-dark-10;
-        transition: all 3s ease;
-        margin-bottom: 16px;
+        border-top: 0;
+
+        padding: 50px 40px;
+
+        &:first-child {
+            border-left: none;
+        }
 
         &:last-child {
-            margin-bottom: 0;
+            grid-column: span 3;
+            border-left: none;
+        }
+
+        @include tablet {
+            gap: 20px;
+            padding: 40px 20px;
+
+            &:last-child {
+                grid-column: span 1;
+            }
+        }
+
+        @include mobile {
+            gap: 30px;
+            padding: 30px 16px;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px solid $color-dark-15;
+
+            &:nth-child(3) {
+                border-bottom: 1px solid $color-dark-15;
+            }
+        }
+
+        .info-description {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            @include tablet {
+                gap: 10px;
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 18px 24px;
+                border: 1px solid $color-dark-15;
+                border-radius: $border-radius-secondary;
+                background-color: $color-dark-10;
+                width: fit-content;
+
+                @include tablet {
+                    padding: 12px 10px;
+                }
+
+                @include hover {
+                    cursor: pointer;
+                    background-color: $color-dark-15;
+                }
+
+                p {
+                    font-size: $font-size-xs;
+                    color: $color-grey-60;
+
+                    @include tablet {
+                        font-size: $font-size-xs-tablet;
+                    }
+
+                    @include mobile {
+                        font-size: $font-size-xs-mobile + 2px;
+                    }
+                }
+            }
+
+            .info-address {
+                font-size: $font-size-xs;
+                color: $color-grey-60;
+                font-weight: $font-weight-regular;
+                width: fit-content;
+
+                @include tablet {
+                    font-size: $font-size-xs-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-xs-mobile + 2px;
+                }
+            }
+        }
+
+        .info-social-icons {
+            display: flex;
+            gap: 25px;
+
+            @include tablet {
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            @include mobile {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 15px 20px;
+                border-radius: $border-radius-secondary - 2px;
+                border: 1px solid $color-dark-15;
+                background-color: $color-dark-10;
+                width: fit-content;
+
+                p {
+                    font-size: $font-size-s - 2px;
+                    color: $color-abs-white;
+
+                    @include tablet {
+                        font-size: $font-size-s-tablet;
+                    }
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+
+                @include tablet {
+                    padding: 12px 14px;
+                }
+
+                @include mobile {
+                    padding: 15px 18px;
+                }
+
+                @include hover {
+                    cursor: pointer;
+                    background-color: $color-dark-15;
+                }
+            }
+        }
+
+        h3 {
+            color: $color-abs-white;
+            font-size: $font-size-s;
+            font-weight: $font-weight-medium;
+
+            @include tablet {
+                font-size: $font-size-xs-tablet + 2px;
+            }
+
+            @include mobile {
+                font-size: $font-size-s-mobile;
+            }
         }
     }
+}
 
-    &-header {
-        padding: 20px;
-        cursor: pointer;
+// ===== CONTACT FORM =====
+.contact-form {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-dark-08;
+    font-family: "Inter";
+
+    @include mobile {
+        flex-direction: column;
+        padding: 20px $section-row-padding-mobile;
+    }
+
+    .contact-form-left {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        background: $color-dark-10;
-        border-radius: $border-radius-primary + 2px;
-        font-weight: $font-weight-medium;
-        color: $color-abs-white;
-        font-size: $font-size-s;
+        justify-content: flex-start;
+        gap: 50px;
+        border-right: 1px solid $color-dark-15;
+        padding: 60px $section-row-padding;
 
-        &::after {
-            content: "+";
-            font-size: $font-size-l;
-            color: $color-yellow-55;
-            transition: transform 3s ease;
+        @include tablet {
+            gap: 20px;
+            padding: 40px $section-row-padding-tablet;
         }
 
-        &.active {
-            &::after {
-                content: "-";
+        @include mobile {
+            padding: 20px 0;
+            border-right: none;
+            border-bottom: 1px solid $color-dark-15;
+        }
+
+        .contact-form-left-title {
+            h1 {
                 color: $color-abs-white;
+                font-size: $font-size-xl;
+                font-weight: $font-weight-medium;
+
+                @include tablet {
+                    font-size: $font-size-l-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-xl-mobile;
+                }
+            }
+
+            .contact-form-left-title-icon {
+                width: 80px;
+                height: 80px;
+
+                @include tablet {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                @include mobile {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
 
-    &-content {
-        padding: 0 20px;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        color: $color-grey-50;
-        font-size: $font-size-xs;
-        line-height: 1.6;
+    .contact-form-right {
+        padding: 60px $section-row-padding;
 
-        &.active {
-            padding: 20px;
-            max-height: 500px;
-        }
-    }
-}
-
-// ===== RESPONSIVE ADJUSTMENTS =====
-@media (max-width: 1024px) {
-    .accordion {
-        padding: $section-row-padding-tablet $section-column-padding-tablet;
-
-        &-header {
-            font-size: $font-size-s-tablet;
-            padding: $button-padding-tablet;
+        @include tablet {
+            padding: 40px $section-row-padding-tablet;
         }
 
-        &-content {
-            font-size: $font-size-xs-tablet;
+        @include mobile {
+            padding: 20px 0;
         }
-    }
-}
 
-@media (max-width: 768px) {
-    .accordion {
-        padding: $section-row-padding-mobile $section-column-padding-mobile;
+        .form {
+            display: grid;
+            gap: 50px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "first-name last-name"
+                "email phone"
+                "message message"
+                "agreement submit";
 
-        &-header {
-            font-size: $font-size-s-mobile;
-            padding: $button-padding-mobile;
+            @include tablet {
+                gap: 30px;
+            }
 
-            &::after {
-                font-size: $font-size-m-mobile;
+            @include mobile {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                grid-template-areas:
+                    "first-name"
+                    "last-name"
+                    "email"
+                    "phone"
+                    "message"
+                    "agreement"
+                    "submit";
+            }
+
+            &-group {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 20px;
+
+                label {
+                    font-family: "Inter";
+                    color: $color-abs-white;
+                    font-size: $font-size-xs;
+                    font-weight: $font-weight-medium;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 20px;
+                    border: 1px solid $color-dark-15;
+                    border-radius: $border-radius-secondary;
+                    background-color: $color-dark-10;
+                    font-family: "Inter";
+                    font-size: $font-size-xs;
+                    font-weight: $font-weight-regular;
+                    color: $color-abs-white;
+                    outline: none;
+
+                    &:focus {
+                        outline: 2px solid $color-yellow-55;
+                        caret-color: $color-abs-white;
+                        transition: outline 0.5s ease;
+                    }
+
+                    @include tablet {
+                        padding: 12px;
+                    }
+                }
+            }
+
+            .first-name {
+                grid-area: first-name;
+            }
+            .last-name {
+                grid-area: last-name;
+            }
+            .email {
+                grid-area: email;
+            }
+            .phone {
+                grid-area: phone;
+            }
+            .message {
+                grid-area: message;
+            }
+            .agreement {
+                grid-area: agreement;
+            }
+
+            &-submit {
+                grid-area: submit;
+                padding: $button-padding;
+                background: $color-yellow-55;
+                color: $color-dark-08;
+                border: none;
+                border-radius: $border-radius-secondary;
+                cursor: pointer;
+                font-family: "Inter";
+                font-size: $font-size-xs + 2px;
+                font-weight: $font-weight-medium;
+                transition: background 0.3s;
+
+                @include hover {
+                    background: $color-grey-50;
+                    color: $color-abs-white;
+                }
+            }
+
+            .agreement {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                input[type="checkbox"] {
+                    width: 30px;
+                    height: 30px;
+                    outline: none;
+
+                    @include tablet {
+                        width: 25px;
+                        height: 25px;
+                    }
+
+                    @include mobile {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                label {
+                    transform: none;
+                    font-family: "Inter";
+                    font-weight: $font-weight-regular;
+                    font-size: $font-size-xs;
+                    color: $color-abs-white;
+                }
             }
         }
+    }
+}
 
-        &-content {
-            font-size: $font-size-xs-mobile;
+// ===== FAQ =====
+.faqs {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-dark-08;
+    font-family: "Inter";
+    border-top: 1px solid $color-dark-15;
+
+    @include mobile {
+        flex-direction: column;
+        padding: 20px $section-row-padding-mobile;
+    }
+
+    .faqs-left {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 50px;
+        border-right: 1px solid $color-dark-15;
+        padding: 60px $section-row-padding;
+
+        @include tablet {
+            gap: 20px;
+            padding: 40px $section-row-padding-tablet;
+        }
+
+        @include mobile {
+            padding: 20px 0;
+            border-right: none;
+            border-bottom: 1px solid $color-dark-15;
+        }
+
+        .faqs-left-title {
+
+            h1 {
+                color: $color-abs-white;
+                font-size: $font-size-xl;
+                font-weight: $font-weight-medium;
+
+                @include tablet {
+                    font-size: $font-size-l-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-xl-mobile;
+                }
+            }
+
+            .faqs-left-title-icon {
+                width: 80px;
+                height: 80px;
+
+                @include tablet {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                @include mobile {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .faqs-right {
+        padding: 60px $section-row-padding;
+
+        @include tablet {
+            padding: 40px $section-row-padding-tablet;
+        }
+
+        @include mobile {
+            padding: 20px 0;
+        }
+
+        // ===== ACCORDION =====
+        .accordion {
+            .accordion-item {
+                border: 1px solid $color-dark-15;
+                border-radius: ($border-radius-primary + 2px);
+                background: $color-dark-10;
+                transition: all 0.3s linear;
+                margin-bottom: 25px;
+
+                @include tablet {
+                    margin-bottom: 24px;
+                }
+
+                @include mobile {
+                    margin-bottom: 18px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .accordion-header {
+                padding: 20px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid $color-dark-15;
+                background: $color-dark-10;
+                border-radius: ($border-radius-primary + 2px);
+                font-weight: $font-weight-medium;
+                color: $color-abs-white;
+                font-size: $font-size-s;
+                transition: background 0.3s linear;
+
+                @include tablet {
+                    font-size: $font-size-s-tablet;
+                    padding: $button-padding-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-s-mobile;
+                    padding: $button-padding-mobile;
+                }
+
+                .icon-container {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .icon {
+                        width: 100%;
+                        height: 100%;
+                        transition: transform 0.3s linear;
+                    }
+                }
+
+                &.active {
+                    border-radius: ($border-radius-primary + 2px)
+                        ($border-radius-primary + 2px) 0 0;
+                    .icon {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .accordion-content {
+                padding: 0 20px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s linear, padding 0.3s linear;
+                color: $color-grey-50;
+                font-size: $font-size-xs;
+                font-family: "Inter";
+
+                @include tablet {
+                    font-size: $font-size-xs-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-xs-mobile;
+                }
+
+                &.active {
+                    padding: 20px;
+                    max-height: fit-content;
+                }
+            }
         }
     }
 }
+
