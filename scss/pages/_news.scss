@@ -1,0 +1,87 @@
+@use "../partials/mixins" as *;
+
+.video-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: $color-dark-08;
+
+    @include tablet {
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 80px $section-row-padding;
+        border: 1px solid $color-dark-15;
+
+        @include tablet {
+            padding: 50px $section-row-padding-tablet;
+        }
+
+        @include mobile {
+            padding: 20px $section-row-padding-mobile;
+        }
+
+        .video-container {
+            width: 100%;
+
+            .video-iframe {
+                width: 100%;
+                height: 320px;
+                border-radius: 15px;
+
+                @include tablet {
+                    height: 300px;
+                    border-radius: 10px;
+                }
+
+                @include mobile {
+                    height: 220px;
+                }
+            }
+        }
+
+        .video-info {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 10px;
+            width: 100%;
+
+            h3 {
+                font-family: 'Inter';
+                font-weight: $font-weight-semibold;
+                font-size: $font-size-s;
+                color: $color-abs-white;
+
+                @include tablet {
+                    font-size: $font-size-xs-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-xs-mobile;
+                }
+            }
+
+            p {
+                font-family: 'Inter';
+                font-weight: $font-weight-regular;
+                font-size: $font-size-xs;
+                color: $color-grey-60;
+
+                @include tablet {
+                    font-size: $font-size-xs-tablet;
+                }
+
+                @include mobile {
+                    font-size: $font-size-xs-mobile;
+                }
+            }
+        }
+    }
+}
