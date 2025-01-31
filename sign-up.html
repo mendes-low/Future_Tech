@@ -10,7 +10,7 @@
     <body>
         <div class="container">
             <form id="authForm" class="form">
-                <a href="./index.html" class="logo">
+                <a href="./index.html" class="logo fade-down">
                     <img src="./assets/images/logo_desktop.svg" alt="Logo" />
                 </a>
 
@@ -22,7 +22,7 @@
                     <a href="#" class="terms-link">Privacy Policy</a>.
                 </p>
 
-                <div class="input-group">
+                <div class="input-group fade-right">
                     <label for="username">Username</label>
                     <input
                         type="text"
@@ -32,7 +32,7 @@
                     <span id="usernameError" class="error-message"></span>
                 </div>
 
-                <div class="input-group">
+                <div class="input-group fade-left">
                     <label for="email">Email</label>
                     <input
                         type="email"
@@ -42,7 +42,7 @@
                     <span id="emailError" class="error-message"></span>
                 </div>
 
-                <div class="input-group">
+                <div class="input-group fade-right">
                     <label for="password">Password</label>
                     <input
                         type="password"
@@ -52,14 +52,16 @@
                     <span id="passwordError" class="error-message"></span>
                 </div>
 
-                <button type="submit">Sign up</button>
+                <button type="submit" class="fade-left">Sign up</button>
 
-                <p class="form-bottom">
+                <p class="form-bottom fade-up">
                     Already have an account?
                     <a href="./sign-in.html" class="login-link">Sign in</a>
                 </p>
             </form>
         </div>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
         <script src="./scripts/main.js"></script>
     </body>
 </html>

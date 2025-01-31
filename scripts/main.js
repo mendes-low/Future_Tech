@@ -129,3 +129,48 @@ document.addEventListener("DOMContentLoaded", () => {
     burgerMenu();
     formValidation();
 });
+
+
+// ===== SCROLL REVEAL ANIMATION =====
+const sr = ScrollReveal()
+
+sr.reveal(".fade-up", {
+    origin: "bottom",
+    distance: "50px",
+    duration: 1300,
+    easing: "linear",
+    opacity: 0, 
+    // reset: false, 
+});
+
+sr.reveal(".fade-down", {
+    origin: "top",
+    distance: "50px",
+    duration: 1300,
+    easing: "linear",
+    opacity: 0,
+    // reset: false,
+});
+
+sr.reveal(".fade-left", {
+    origin: "left",
+    distance: "100px",
+    duration: 1300,
+    opacity: 0,
+    // reset: false,
+});
+
+sr.reveal(".fade-right", {
+    origin: "right",
+    distance: "100px",
+    duration: 1300,
+    opacity: 0,
+    // reset: false,
+});
+
+sr.reveal(".zoom-in", {
+    scale: 1.3,
+    duration: 1500,
+    opacity: 0,
+    // reset: false,
+});
